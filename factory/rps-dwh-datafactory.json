@@ -1,0 +1,9 @@
+{
+	"name": "rps-dwh-datafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "969302ff-9f28-4625-ba48-22c2cd9e448b",
+		"tenantId": "ba493c1d-af78-4e12-9625-f4af8524b3f7"
+	}
+}
