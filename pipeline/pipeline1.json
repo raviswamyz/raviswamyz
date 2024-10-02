@@ -20,7 +20,18 @@
 						"sqlReaderStoredProcedureName": "[dbo].[usp_GetFeedParameters]",
 						"storedProcedureParameters": {
 							"feedname_in": {
-								"type": "String"
+								"type": "String",
+								"value": {
+									"value": "@pipeline().parameters.p_feedname",
+									"type": "Expression"
+								}
+							},
+							"prefrundate": {
+								"type": "String",
+								"value": {
+									"value": "@pipeline().parameters.p_prefrundate",
+									"type": "Expression"
+								}
 							}
 						},
 						"queryTimeout": "02:00:00",
