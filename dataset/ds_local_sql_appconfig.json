@@ -1,0 +1,41 @@
+{
+	"name": "ds_local_sql_appconfig",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_local_sql_appconfig",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"databaseDomain": {
+					"value": "@dataset().conn_domain",
+					"type": "Expression"
+				},
+				"databaseName": {
+					"value": "@dataset().conn_db",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"tableName": {
+				"type": "string"
+			},
+			"conn_domain": {
+				"type": "string",
+				"defaultValue": "173.63.180.19"
+			},
+			"conn_db": {
+				"type": "string",
+				"defaultValue": "mssql-db-appconfig"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -15,6 +15,41 @@
 					"variableName": "test_variable",
 					"value": "This is my test variable"
 				}
+			},
+			{
+				"name": "GetParameters",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_local_sql_appconfig",
+						"type": "DatasetReference",
+						"parameters": {
+							"conn_domain": {
+								"value": "@pipeline().globalParameters.AppConfigSqlServerHost",
+								"type": "Expression"
+							},
+							"conn_db": {
+								"value": "@pipeline().globalParameters.AppConfigSqlDatabase",
+								"type": "Expression"
+							}
+						}
+					},
+					"firstRowOnly": false
+				}
 			}
 		],
 		"variables": {
