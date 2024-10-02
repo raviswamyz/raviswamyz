@@ -5,6 +5,10 @@
 			"AppConfigSqlDatabase": {
 				"type": "string",
 				"value": "mssql-db-appconfig"
+			},
+			"AppConfigSqlServerHost": {
+				"type": "string",
+				"value": "173.63.180.19"
 			}
 		}
 	},
