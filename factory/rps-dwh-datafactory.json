@@ -1,0 +1,12 @@
+{
+	"name": "rps-dwh-datafactory",
+	"properties": {
+		"globalParameters": {
+			"AppConfigSqlDatabase": {
+				"type": "string",
+				"value": "mssql-db-appconfig"
+			}
+		}
+	},
+	"location": "eastus"
+}
