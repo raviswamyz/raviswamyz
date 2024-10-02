@@ -17,6 +17,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
+						"sqlReaderStoredProcedureName": "[dbo].[usp_GetFeedParameters]",
+						"storedProcedureParameters": {
+							"feedname_in": {
+								"type": "String"
+							}
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -38,6 +44,14 @@
 				}
 			}
 		],
+		"parameters": {
+			"p_feedname": {
+				"type": "string"
+			},
+			"p_prefrundate": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"test_variable": {
 				"type": "String"
