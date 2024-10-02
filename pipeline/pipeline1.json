@@ -41,6 +41,7 @@
 						"referenceName": "ds_local_sql_appconfig",
 						"type": "DatasetReference",
 						"parameters": {
+							"tableName": "N/A",
 							"conn_domain": {
 								"value": "@pipeline().globalParameters.AppConfigSqlServerHost",
 								"type": "Expression"
