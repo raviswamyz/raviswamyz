@@ -1,0 +1,74 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetParameters",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderStoredProcedureName": "[dbo].[usp_GetFeedParameters]",
+						"storedProcedureParameters": {
+							"feedname_in": {
+								"type": "String",
+								"value": {
+									"value": "@pipeline().parameters.p_feedname",
+									"type": "Expression"
+								}
+							},
+							"prefrundate": {
+								"type": "String",
+								"value": {
+									"value": "@pipeline().parameters.p_prefrundate",
+									"type": "Expression"
+								}
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_local_sql_appconfig",
+						"type": "DatasetReference",
+						"parameters": {
+							"tableName": "N/A",
+							"conn_domain": {
+								"value": "@pipeline().globalParameters.AppConfigSqlServerHost",
+								"type": "Expression"
+							},
+							"conn_db": {
+								"value": "@pipeline().globalParameters.AppConfigSqlDatabase",
+								"type": "Expression"
+							}
+						}
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"parameters": {
+			"p_feedname": {
+				"type": "string"
+			},
+			"p_prefrundate": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"test_variable": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}

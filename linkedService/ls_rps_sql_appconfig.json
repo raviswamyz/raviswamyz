@@ -1,0 +1,14 @@
+{
+	"name": "ls_rps_sql_appconfig",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "rg-dwh-sql-server.database.windows.net",
+			"database": "rps-dwh-sql-db-appconfig",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}
